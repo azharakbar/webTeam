@@ -1,6 +1,37 @@
 <div class = "ngview">
-    <script src="https://d3js.org/d3.v3.min.js"></script>
 
+
+<div style="">
+
+    <div class="row">
+      <div class="col s12 m5 l5">
+        <div class="card-panel white" style="height:100%;width:800px">
+          <span class="black-text">
+          <span style="font-family: Raleway;font-size:24px;color: rgba(40, 40, 40, 1);"><b>Device Log Details</b></span>
+          <div class="section">
+          	<table ng-table = "logtable" class="responsive-table">
+            <thead>
+              <tr>
+            <th width ="5%">Beacon</th><th width ="4%">User Name</th><th width ="5%">Begin Time</th><th width ="7%">End Time</th> 
+              </tr>
+            </thead>
+ 	      <tr ng-repeat="x in $data">
+
+        <td width ="5%">{{ x.beaconId }}</td>
+          <td width ="4%">{{ x.userName }}</td>
+	  <td width ="5%">{{ x.beginTime }}</td>
+	  <td width ="7%">{{ x.endTime }}</td>
+
+      </tr>         
+          	</table>
+          </div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+</div>
+<!--
 <table ng-table = "logtable">
 <tr ng-repeat="x in $data ">
 <td width ="20%" title = "'User'">{{ x.userName }}</td>
@@ -8,10 +39,10 @@
  <td width ="20%" title = "'Begin'">{{ x.beginTime }}</td>
 </tr>
 </table>
-
-<div id="graph">
-
+-->
 
 </div>
 
-</div>
+
+
+

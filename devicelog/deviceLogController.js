@@ -9,20 +9,16 @@ app.controller('deviceLogController',function($scope,$window, $http,NgTableParam
 })
   .then(function (response)  {
   	 $scope.logtable = new NgTableParams({page:2,count:10},{ dataset: response.data.result });
-    //$window.location.assign('http://54.251.44.26:4009/api/alldetails')
-    //$window.location.href('./deviceLogView.html')
     var xColumn = "beginTime";
         var yColumn = "batteryStatus";
-        var xScale = d3.time.scale().range([0, 600]);
-        var yScale = d3.scale.linear().range([450, 0]);
+        var xScale = d3.time.scale().range([0, 300]);
+        var yScale = d3.scale.linear().range([200, 0]);
         var margin = {
             left: 50,
             right: 10,
             top: 30,
             bottom: 10
         };
-        // var width = 960 - margin.left - margin.right,
-        //     height = 550 - margin.top - margin.bottom;
         var width = 960 - margin.left - margin.right,
             height = 550 - margin.top - margin.bottom;
         var svg = d3.select("#graph").append("svg")
@@ -33,8 +29,10 @@ app.controller('deviceLogController',function($scope,$window, $http,NgTableParam
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         var xAxisG = g.append("g")
-            .attr("transform", "translate(0, " + 450 + ")");
-        var yAxisG = g.append("g");
+            .attr("transform", "translate(0, " + 200 + ")")
+            .style("font-size", "10px");
+        var yAxisG = g.append("g")
+            .style("font-size", "10px");
 
         var path = g.append("path")
             .attr("d", line)
@@ -66,7 +64,7 @@ app.controller('deviceLogController',function($scope,$window, $http,NgTableParam
             path.style("stroke", "steelblue")
                 .style("stroke-width", "6")
               console.log("X: ",d3.event.pageX + m[0], "Y: ", d3.event.pageY + m[1]);
-            tooltip.style("top", (m[1] + 250)+"px").style("left",(m[0] + 55)+"px");
+            tooltip.style("top", (m[1] + 60)+"px").style("left",(m[0] + 80)+"px");
             tooltip.style("padding", "4")
             tooltip.text(Math.round(yScale.invert(m[1])));
         }
@@ -80,7 +78,7 @@ app.controller('deviceLogController',function($scope,$window, $http,NgTableParam
                 return yScale(d[yColumn]);
             });
 
-        var xAxis = d3.svg.axis().scale(xScale).orient("bottom").ticks(7).tickFormat(d3.time.format('%a'));
+        var xAxis = d3.svg.axis().scale(xScale).orient("bottom").ticks(3).tickFormat(d3.time.format('%a'));
         var yAxis = d3.svg.axis().scale(yScale).orient("left");
 
         function render(data) {

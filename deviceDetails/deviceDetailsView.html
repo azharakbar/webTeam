@@ -1,6 +1,35 @@
-<div class = "thirdview">
-{{name}}<br>
-DeviceId : {{id}}<br>
-Version : {{os}}<br>
-Battery : {{battery}}
+
+
+
+ <div class = "thirdview" style="left:67%">
+<div class="row">
+      <div class="col s4">
+        <div class="card-panel white" style="height:160px; width:400px">
+          <span style="font-family: Raleway;color: rgba(40, 40, 40, 1); font-size: 20px;">
+          <center>
+            <b>{{name}}</b>
+          </center>            
+          </span>
+          <hr>
+          <span style="font-family: Raleway;color: rgba(40, 40, 40, 1);">
+			<span>Device Id:</span> <b>{{id}}</b><br>
+			<span>Version:</span> <b>{{os}}</b><br>
+			<span>Battery:</span> <b>{{battery}}% </b>
+          </span>
+        </div>
+      </div>
 </div>
+
+ <div class="col s2 m12" style="width:400px">
+        <div class="card-panel card small white">
+<b>DEVICE LOG DETAILS</b></hr>
+<div id="graph">
+</div>
+</div>  
+ </div>
+      </div>         
+
+
+
+
+
