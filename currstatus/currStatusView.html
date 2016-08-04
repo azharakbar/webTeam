@@ -4,13 +4,12 @@
 
     <div class="row">
       <div class="col s12 m5 l5">
-        <div class="card-panel white" style="height:100%;width:1100px">
+        <div class="card-panel white" style="height:100%;width:1000px">
           <span class="black-text">
           <span style="font-family: Raleway;font-size:24px;color: rgba(40, 40, 40, 1);"><b>Devices</b></span>
-          <a class="btn-flat dropdown-button" data-activates="allDrop" style="position:absolute;left:780px;font-family: Raleway;font-size:15px;color: rgba(40, 40, 40, 1);">All</a>
-		  <a class="btn-flat dropdown-button" data-activates="beaconDrop" style="position:absolute;left:870px;font-family: Raleway;font-size:15px;color: rgba(40, 40, 40, 1);">Beacon</a>
-		  <a class="btn-flat" style="position:absolute;left:990px;font-family: Raleway;font-size:15px;color: rgba(40, 40, 40, 1);">OS</a>          
-          <!-- <div class="divider"></div> -->
+          <a class="btn-flat dropdown-button" data-activates="allDrop" style="position:absolute;left:680px;font-family: Raleway;font-size:15px;color: rgba(40, 40, 40, 1);">All</a>
+		  <a class="btn-flat dropdown-button" data-activates="beaconDrop" style="position:absolute;left:770px;font-family: Raleway;font-size:15px;color: rgba(40, 40, 40, 1);">Beacon</a>
+		  <a class="btn-flat" style="position:absolute;left:890px;font-family: Raleway;font-size:15px;color: rgba(40, 40, 40, 1);">OS</a>          
           <div class="section">
           	<table ng-table = "currtable" class="responsive-table">
             <thead>
@@ -24,7 +23,7 @@
           <td width ="20%" >{{ x.userName }}</td>
           <td width ="10%" >{{ x.beaconName }}</td>
           <td width ="10%" >{{ x.batteryStatus }}</td>
-          <td width ="10%" >{{ x.os + ' ' + x.osVersion }}</td>
+          <td width ="10%" >{{ x.osVersion }}</td>
 
       </tr>         
           	</table>
