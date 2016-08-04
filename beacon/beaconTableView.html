@@ -1,0 +1,11 @@
+<div class = "ngview">
+<table ng-table = "beaconTable">
+  <tr ng-repeat="x in $data">
+
+    <td width="10%" title = "'Beacon'">{{ x.beaconName }}</td>
+    <td width="20%" title = "'BeaconId'">{{ x.beaconId }}</td>
+    <td width="10%" title = "'#Devices'">{{ x.numOfDevices }}</td>
+
+  </tr>
+</table>
+</div>

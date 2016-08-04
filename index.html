@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app ="myApp" >
+    <head>
+        <title>This is directive test</title>
+        <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">    
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div ui-view = "nav"></div>
+<div ui-view = "rest"></div>
+<div ui-view = "third"></div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src = "./node_modules/angular/angular.js"></script>
+<script src = "./node_modules/ng-table/dist/ng-table.js"></script>
+<script src = "./node_modules/angular-route/angular-route.js"></script>
+<script src = "./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script src = "./login/js/materialize.min.js"></script>
+<script src = "https://d3js.org/d3.v3.min.js"></script>
+<script src = "./currstatus/currStatusController.js"></script>
+<script src = "./beacon/beaconTableController.js"></script>
+<script src = "./beacon/addBeaconController.js"></script>
+<script src = "./devicelog/deviceLogController.js"></script>
+<script src = "./deviceDetails/deviceDetailsController.js"></script>
+<script src = "./editUser/editUserController.js"></script>
+<script src = "./login/controllers/login.js"></script>
+<script src = "./app.module.js"></script>
+
+</body>
+</html>

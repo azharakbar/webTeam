@@ -1,0 +1,56 @@
+	<div class = "row" ng-controller="test">
+		
+		<div class = "col s6">
+				<div class="row" id="userNameDiv">
+					<div class="input-field col s9 offset-s4">
+						<i class="material-icons prefix">perm_identity</i>
+						<input id="userNameField" type="text" class="validate" ng-model="username">
+						<label for="userNameField">USERNAME</label>
+					</div>
+				</div>
+
+				<div class="row" id="passwordDiv">
+					<div class="input-field col s9 offset-s4">
+						<i class="material-icons prefix">lock</i>
+						<input id="passwordField" type="password" class="validate" ng-model="password">
+						<label for="passwordField">PASSWORD</label>
+					</div>
+				</div>
+
+		        <div class="row" id="forgotPwd">
+		       	 	<div class="col s4 offset-s10">
+		       	 		<a href="#" ><u>FORGOT PASSWORD</u></a>
+		       	 	</div>
+		        </div>	
+
+		        <div class="row" id="asd">
+		        	<div class="col s5 offset-s1" id="loginError">
+		        	{{error}}
+					</div>
+				</div>
+
+		        <div class="row" id="signInButtonDiv">
+		        	<div class="col s1 offset-s1" >
+		        		<button type="button" class="btn waves-effect waves-light" id="signInButton" ng-click="submit()">SIGN IN</button>
+					</div>
+				</div>
+		</div>
+		<div class = "col s6">
+			<div id="rectBox"></div>
+			<div class="row">
+				<img class="responsive-img" src = "../imgs/signin bg.png" id="grpBg">
+			</div>
+
+			<div class="row">
+				<div id = "msg" class="flow-text col s5">Device discovery made easy</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<span class="row">
+		<div class="footer col s12">
+				MADE WITH <img src="../imgs/shape 1.png"> AT QBURST
+		</div>
+	</span>

@@ -1,0 +1,32 @@
+<div class="navbar-fixed">
+	<nav>
+  <div class="nav-wrapper" id="header">
+    <a href="#" data-activates="slide-out" class="button-collaps"><i class="material-icons" id="reorderBtn">reorder</i></a><a class="brand-logo"><img src="./imgs/logo.png" id="qLogo"></a>
+    <ul class="right hide-on-med-and-down">   
+      <li><a href="sass.html"><i class="material-icons">input</i></a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+<ul id="slide-out" class="side-nav">
+  <li><div class="userView">
+    <span class="name" id="nameField">John Doe</span>
+    <span class="email" id="desigField">System Admin</span>
+  </div></li>
+  <li><div class="divider"></div></li>
+  
+  <li><a class="subheader" id="dashField">Dashboard</a></li>
+  <li><a ui-sref="all" id="devicesField"><i class="material-icons">home</i>Devices</a></li>
+  <li><a ui-sref="beacon" id="beaconsField"><i class="material-icons">router</i>Beacons</a></li>
+  <li><a ui-sref="user" id="usersField"><i class="material-icons">perm_identity</i>Users</a></li>
+  <li><a ui-sref="#!" id="settingsField"><i class="material-icons">settings</i>Settings</a></li>
+</ul>
+
+	<script type="text/javascript">
+		$('.button-collaps').sideNav({
+
+			closeOnClick: true
+		}) ;
+
+	</script>

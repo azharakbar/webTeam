@@ -1,0 +1,17 @@
+<div class = "ngview">
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+<table ng-table = "logtable">
+<tr ng-repeat="x in $data ">
+<td width ="20%" title = "'User'">{{ x.userName }}</td>
+ <td width ="10%" title = "'Beacon'">{{ x.beaconId }}</td>
+ <td width ="20%" title = "'Begin'">{{ x.beginTime }}</td>
+</tr>
+</table>
+
+<div id="graph">
+
+
+</div>
+
+</div>

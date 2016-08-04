@@ -1,0 +1,141 @@
+#rectBox{
+	position: absolute;
+	top: 229px;
+	height: 180px;
+	width: 2px;
+	background-color: rgba(255, 72, 72, 1);
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+#grpBg{
+	height: 570px;
+	width: 100%;	
+}
+
+#msg{
+	position: absolute;
+	top: 285px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	text-align: center;
+}
+
+#userNameDiv{
+	position:absolute;
+	width:35.6%;
+	top:213px
+}
+
+#userNameField{
+	height: 40px;
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);	
+}
+
+#passwordDiv{
+	position:absolute;
+	width:35.6%;
+	top:280px
+}
+
+#passwordField{
+	height: 40px;
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);	
+}
+
+
+#forgotPwd{
+	position: absolute;
+	top: 350px;
+	width: 35%;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 10px;
+}
+
+#signInButtonDiv{
+	position: absolute;
+	top:425px;
+	left:100px;
+	width:100%
+}
+
+#signInButton{
+	height:58px;
+	width:285px;
+	background-color: rgba(35, 46, 64, 1);
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+#loginError{
+	position: absolute;
+	top:380px;
+	width:38%;
+	text-align: center;
+	color: #F44336 ; 
+}
+
+#qLogo{
+	position:absolute;
+	width:102px;
+	height:31px;
+	left:65px;
+	top:15px	
+}
+
+#header{
+	background:rgba(35, 46, 64, 1);
+}
+
+#slide-out{
+	position:absolute;
+	top:64px;
+	height:90%;
+}
+
+#reorderBtn{
+	position:absolute;
+	width:102px;
+	height:31px;
+	left:27px;
+}
+
+#nameField{
+	font-family: 'Raleway', sans-serif; 
+	font-size: 20px;
+}
+
+#desigField{
+	font-family: 'Raleway', sans-serif; 
+	font-size: 15px;
+}
+
+#dashField{
+	position: absolute;
+	top:150px;
+}
+
+#devicesField{
+	position: absolute;
+	top: 200px;
+}
+
+#beaconsField{
+	position: absolute;
+	top: 250px;	
+}
+
+#usersField{
+	position: absolute;
+	top: 300px;	
+}
+
+#settingsField{
+	position: absolute;
+	top: 360px;	
+}
+
+.footer{
+	position: absolute;
+	top: 600px;
+	text-align: center; 
+	font-family: 'Montserrat', sans-serif;
+}

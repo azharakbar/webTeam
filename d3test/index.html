@@ -1,0 +1,123 @@
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <title>D3</title>
+    <style>
+        path {
+            fill: none;
+            stroke: steelblue;
+            stroke-width: 3px;
+        }
+        title {
+            fill: red;
+        }
+        .circleBase {
+            border-radius: 50%;
+        }
+        .type {
+            width: 20px;
+            height: 20px;
+            background: #ccc;
+            border: 1px solid #000;
+        }
+
+    </style>
+
+<body>
+    <script>
+        var xColumn = "beginTime";
+        var yColumn = "batteryStatus";
+        var xScale = d3.time.scale().range([0, 600]);
+        var yScale = d3.scale.linear().range([450, 0]);
+        var margin = {
+            left: 50,
+            right: 10,
+            top: 30,
+            bottom: 10
+        };
+        var width = 960 - margin.left - margin.right,
+            height = 550 - margin.top - margin.bottom;
+
+        var svg = d3.select("body").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+
+        var g = svg.append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var xAxisG = g.append("g")
+            .attr("transform", "translate(0, " + 450 + ")");
+        var yAxisG = g.append("g");
+
+        var path = g.append("path")
+            .attr("d", line)
+            .attr("fill", "none")
+            .attr("stroke", "steelblue")
+            .attr("stroke-width", 5)
+        
+        path.attr("id", "myPath")
+            .on("mouseover", function(){tooltip.style("visibility", "visible");})
+            .on("mousemove", mMove)
+            .on("mouseout", mOut);
+        
+        //Tooltip//
+        var tooltip = d3.select("body")
+            .append("div")
+            .attr("class", "circleBase type")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("visibility", "hidden");
+        
+        
+        function mOut(){
+            tooltip.style("visibility", "hidden");
+            path.style("stroke", "steelblue").style("stroke-width", "3")
+            }
+        function mMove(){
+            console.log("on curve")
+            var m = d3.mouse(this);
+            path.style("stroke", "steelblue")
+                .style("stroke-width", "6")
+            tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");
+            tooltip.style("padding", "4")
+            tooltip.text(Math.round(yScale.invert(m[1])));
+        }
+        
+        var line = d3.svg.line()
+            .interpolate("linear")
+            .x(function (d) {
+                return xScale(new Date(d[xColumn]));
+            })
+            .y(function (d) {
+                return yScale(d[yColumn]);
+            });
+
+        var xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickFormat(d3.time.format('%A'));
+        var yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+        function render(data) {
+            var xExtent = d3.extent(data, function (d) {
+                return new Date(d[xColumn]);
+            });
+//            var yExtent = d3.extent(data, function (d) {
+//                return d[yColumn];
+//            });
+//            console.log(xExtent, yExtent);
+            xScale.domain(xExtent);
+            yScale.domain([0, 100]);
+            xAxisG.call(xAxis);
+            yAxisG.call(yAxis);
+
+            path.attr("d", line(data));
+        }
+        
+        d3.json("http://54.251.44.26:4009/api/logs", function (data) {
+                render(data.result);
+            })
+            .header("Content-type", "application/json")
+            .send("POST", JSON.stringify({
+                deviceId: "252ACF39-49DB-45AB-9058-DD6B9D5AD54E"
+            }));
+    </script>
+
+</body>
+

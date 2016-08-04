@@ -1,0 +1,79 @@
+<div class = "ngview">
+
+<div style="">
+
+    <div class="row">
+      <div class="col s12 m5 l5">
+        <div class="card-panel white" style="height:100%;width:1100px">
+          <span class="black-text">
+          <span style="font-family: Raleway;font-size:24px;color: rgba(40, 40, 40, 1);"><b>Devices</b></span>
+          <a class="btn-flat dropdown-button" data-activates="allDrop" style="position:absolute;left:780px;font-family: Raleway;font-size:15px;color: rgba(40, 40, 40, 1);">All</a>
+		  <a class="btn-flat dropdown-button" data-activates="beaconDrop" style="position:absolute;left:870px;font-family: Raleway;font-size:15px;color: rgba(40, 40, 40, 1);">Beacon</a>
+		  <a class="btn-flat" style="position:absolute;left:990px;font-family: Raleway;font-size:15px;color: rgba(40, 40, 40, 1);">OS</a>          
+          <!-- <div class="divider"></div> -->
+          <div class="section">
+          	<table ng-table = "currtable" class="responsive-table">
+            <thead>
+              <tr>
+            <th width ="20%">Device Name</th><th width ="20%">User Name</th><th width ="10%">Beacon</th><th width ="10%">Battery Level</th><th width ="10%">Device Version</th>                
+              </tr>
+            </thead>
+ 	      <tr ng-repeat="x in $data | filter : device | filter: showField | orderBy : orderField">
+
+          <td width ="20%"><a ui-sref = "log({deviceId: x.deviceId,deviceName: x.deviceName,osVersion: x.osVersion,batteryStatus: x.batteryStatus})">{{ x.deviceName }}</a></td>
+          <td width ="20%" >{{ x.userName }}</td>
+          <td width ="10%" >{{ x.beaconName }}</td>
+          <td width ="10%" >{{ x.batteryStatus }}</td>
+          <td width ="10%" >{{ x.os + ' ' + x.osVersion }}</td>
+
+      </tr>         
+          	</table>
+          </div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+<ul id="allDrop" class="dropdown-content">
+  <li><a href="#!"><font style="color: rgba(40, 40, 40, 1);">Active</font></a></li>
+  <li><a href="#!"><font style="color: rgba(40, 40, 40, 1);">In the Box</font></a></li>
+</ul>
+
+
+<ul id="beaconDrop" class="dropdown-content">
+  <li><a href="#!"><font style="color: rgba(40, 40, 40, 1);">Grab Beacons List here</font></a></li>
+</ul>
+<!-- <table ng-table = "currtable"> -->
+<!-- <input type = "text" ng-model = "device.deviceName"> -->
+<!-- <tr ng-repeat="x in $data | filter : device | filter: showField | orderBy : orderField">
+
+    <td width ="20%" title = "'Device'"><a ui-sref = "log({deviceId: x.deviceId,deviceName: x.deviceName,osVersion: x.osVersion,batteryStatus: x.batteryStatus})">{{ x.deviceName }}</a></td>
+    <td width ="20%" title = "'User'">{{ x.userName }}</td>
+    <td width ="10%" title = "'Beacon'">{{ x.beaconName }}</td>
+    <td width ="10%" title = "'Battery'">{{ x.batteryStatus }}</td>
+    <td width ="10%" title = "'Version'">{{ x.osVersion }}</td>
+
+</tr>
+</table>
+<br>
+<br>
+<br>
+<button ng-click="order('beaconName')">Beacon</button>
+<button ng-click="order('osVersion')">OS</button>
+<button ng-click="show('all')">All</button>
+<button ng-click="show('unregistered')">Active</button>
+<button ng-click="show('box')">In the Box</button> -->
+</div>
+
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$(".dropdown-button").dropdown({
+		});
+	})
+
+</script>

@@ -1,0 +1,59 @@
+{
+  "result_code": 200,
+  "result_string": "success",
+  "result_title": "success",
+  "result": [
+    {
+      "beginTime": "2016-08-02T07:59:36.983Z",
+      "batteryStatus": 100
+    },
+    {
+      "beginTime": "2016-08-02T07:25:31.868Z",
+      "batteryStatus": 84
+    },
+    {
+      "beginTime": "2016-08-02T07:25:31.853Z",
+      "batteryStatus": 84
+    },
+    {
+      "beginTime": "2016-08-02T07:25:31.417Z",
+      "batteryStatus": 84
+    },
+    {
+      "beginTime": "2016-08-02T07:24:08.555Z",
+      "batteryStatus": 84
+    },
+    {
+      "beginTime": "2016-08-02T07:24:01.613Z",
+      "batteryStatus": 84
+    },
+    {
+      "beginTime": "2016-08-02T07:23:59.654Z",
+      "batteryStatus": 84
+    },
+    {
+      "beginTime": "2016-08-02T07:23:58.716Z",
+      "batteryStatus": 84
+    },
+    {
+      "beginTime": "2016-08-02T07:22:33.659Z",
+      "batteryStatus": 84
+    },
+    {
+      "beginTime": "2016-08-02T07:22:32.647Z",
+      "batteryStatus": 84
+    },
+    {
+      "beginTime": "2016-08-02T07:22:24.083Z",
+      "batteryStatus": 84
+    },
+    {
+      "beginTime": "2016-08-02T07:18:51.993Z",
+      "batteryStatus": 84
+    },
+    {
+      "beginTime": "2016-08-02T07:04:34.927Z",
+      "batteryStatus": 100
+    }
+  ]
+}
